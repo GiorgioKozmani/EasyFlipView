@@ -196,14 +196,14 @@ public class EasyFlipView extends FrameLayout {
             mCardFrontLayout.setVisibility(VISIBLE);
 
             if (mCardBackLayout != null) {
-                mCardBackLayout.setVisibility(GONE);
+                mCardBackLayout.setVisibility(INVISIBLE);
             }
         }
     }
 
     private void setupInitializations()
     {
-        mCardBackLayout.setVisibility(View.GONE);
+        mCardBackLayout.setVisibility(View.INVISIBLE);
     }
 
     private void initGestureDetector() {
@@ -242,14 +242,14 @@ public class EasyFlipView extends FrameLayout {
                 public void onAnimationEnd(Animator animator) {
 
                     if (mFlipState == FlipState.FRONT_SIDE) {
-                        mCardBackLayout.setVisibility(GONE);
+                        mCardBackLayout.setVisibility(INVISIBLE);
                         mCardFrontLayout.setVisibility(VISIBLE);
 
                         if (onFlipListener != null)
                             onFlipListener.onViewFlipCompleted(EasyFlipView.this, FlipState.FRONT_SIDE);
                     } else {
                         mCardBackLayout.setVisibility(VISIBLE);
-                        mCardFrontLayout.setVisibility(GONE);
+                        mCardFrontLayout.setVisibility(INVISIBLE);
 
                         if (onFlipListener != null)
                             onFlipListener.onViewFlipCompleted(EasyFlipView.this, FlipState.BACK_SIDE);
@@ -306,14 +306,14 @@ public class EasyFlipView extends FrameLayout {
                 public void onAnimationEnd(Animator animator) {
 
                     if (mFlipState == FlipState.FRONT_SIDE) {
-                        mCardBackLayout.setVisibility(GONE);
+                        mCardBackLayout.setVisibility(INVISIBLE);
                         mCardFrontLayout.setVisibility(VISIBLE);
 
                         if (onFlipListener != null)
                             onFlipListener.onViewFlipCompleted(EasyFlipView.this, FlipState.FRONT_SIDE);
                     } else {
                         mCardBackLayout.setVisibility(VISIBLE);
-                        mCardFrontLayout.setVisibility(GONE);
+                        mCardFrontLayout.setVisibility(INVISIBLE);
 
                         if (onFlipListener != null)
                             onFlipListener.onViewFlipCompleted(EasyFlipView.this, FlipState.BACK_SIDE);
